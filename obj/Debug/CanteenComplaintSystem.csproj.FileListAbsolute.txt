@@ -1,0 +1,7 @@
+e:\CANTEEN\obj\Debug\CanteenComplaintSystem.csproj.AssemblyReference.cache
+e:\CANTEEN\obj\Debug\CanteenComplaintSystem.csproj.CoreCompileInputs.cache
+e:\CANTEEN\bin\CanteenComplaintSystem.dll.config
+e:\CANTEEN\bin\CanteenComplaintSystem.dll
+e:\CANTEEN\bin\CanteenComplaintSystem.pdb
+e:\CANTEEN\obj\Debug\CanteenComplaintSystem.dll
+e:\CANTEEN\obj\Debug\CanteenComplaintSystem.pdb

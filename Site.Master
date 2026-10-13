@@ -1,0 +1,49 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CanteenComplaintSystem.SiteMaster" %>
+<%@ Register Src="~/Controls/Header.ascx" TagPrefix="uc" TagName="Header" %>
+<%@ Register Src="~/Controls/Footer.ascx" TagPrefix="uc" TagName="Footer" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Canteen Complaint System</title>
+    
+    <!-- Modern Stylesheet -->
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- Site Header User Control -->
+        <uc:Header ID="HeaderControl" runat="server" />
+
+        <!-- Navigation Bar bound to web.sitemap -->
+        <nav class="nav-bar-wrapper">
+            <div class="nav-container">
+                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" />
+                <asp:Menu ID="MainMenu" runat="server" 
+                    DataSourceID="SiteMapDataSource1" 
+                    Orientation="Horizontal" 
+                    StaticDisplayLevels="1" 
+                    MaximumDynamicDisplayLevels="2" 
+                    CssClass="main-nav-menu" 
+                    StaticSelectedStyle-CssClass="highlighted"
+                    StaticMenuItemStyle-CssClass="static">
+                </asp:Menu>
+            </div>
+        </nav>
+
+        <!-- Central Content Area -->
+        <main class="main-wrapper">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+
+        <!-- Site Footer User Control -->
+        <uc:Footer ID="FooterControl" runat="server" />
+    </form>
+</body>
+</html>

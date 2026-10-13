@@ -1,0 +1,138 @@
+================================================================================
+          CANTEEN COMPLAINT SYSTEM - PROJECT WORKING & SYSTEM ARCHITECTURE
+================================================================================
+Target Framework : .NET Framework 4.8 ASP.NET Web Forms
+Programming Lang  : C# 7.3
+Database          : SQL Server / SQL Express (Database: CanteenDB)
+Audit Logging     : LINQ to XML (XDocument) -> App_Data/ActivityLog.xml
+Announcements     : ASP.NET AdRotator -> App_Data/ads.xml
+Styling & Design  : Vanilla CSS3 (Content/Site.css) & Glassmorphism UI
+================================================================================
+
+1. PROJECT OVERVIEW
+--------------------------------------------------------------------------------
+The Canteen Complaint System is a web-based application designed for campus 
+canteen administration and student grievance management. It allows students to 
+lodge canteen complaints (food quality, hygiene, service speed, billing), track 
+resolution status in real-time, and view daily canteen announcements. 
+
+Administrators have a protected management console to filter complaints using 
+ASP.NET AJAX, update complaint statuses, edit categories, and review system audit 
+trail logs stored in XML.
+
+--------------------------------------------------------------------------------
+2. SYSTEM ARCHITECTURE & DUAL-PORTAL STRUCTURE
+--------------------------------------------------------------------------------
+
+A. PUBLIC STUDENT PORTAL (No Login Required)
+   - Home Dashboard (Default.aspx)
+   - Lodge Complaint (SubmitComplaint.aspx)
+   - View Public Complaints (ViewComplaints.aspx)
+   - Complaint Details (ComplaintDetails.aspx?ID={id})
+   - Canteen Info, Hours & Contacts (About.aspx)
+   - Admin Login (AdminLogin.aspx)
+
+B. PROTECTED ADMIN PORTAL (Requires Admin Authentication: admin / admin123)
+   - Admin Management Console (ManageComplaints.aspx)
+   - Edit Complaint Status (EditComplaint.aspx?ID={id})
+   - XML Activity Audit Logs (ViewLogs.aspx)
+   - Admin Logout (Logout.aspx)
+
+--------------------------------------------------------------------------------
+3. PAGE-BY-PAGE WORKING EXPLANATION
+--------------------------------------------------------------------------------
+
+1. Site.Master & User Controls (Header.ascx & Footer.ascx)
+   - Site.Master provides a consistent visual layout across all pages.
+   - Header.ascx renders campus branding, real-time status pill, and a dynamic 
+     profile badge. If logged in as Admin, it displays "Admin: admin" with a 
+     "Sign Out" link; otherwise it displays "Student Portal" with "Admin Sign In".
+   - Footer.ascx displays copyright notice with dynamic year DateTime.Now.Year, 
+     quick links, and campus helpdesk contacts.
+   - web.sitemap powers the top navigation menu (<asp:Menu>) and side TreeView.
+
+2. Home Dashboard (Default.aspx)
+   - Displays real-time summary statistics cards (Total Complaints, Pending, 
+     Resolved, Quality Rating).
+   - Automatically runs a SQL Server connection diagnostic test to confirm 
+     connection to CanteenDB.
+   - Provides quick action launch buttons.
+
+3. Submit Complaint Form (SubmitComplaint.aspx)
+   - Top <asp:AdRotator> control loads dynamic canteen bulletins & special meal 
+     offers from App_Data/ads.xml.
+   - Form fields: Full Name, Student Email, Category DropDown, Incident Date 
+     (<asp:Calendar> control), and Detailed Description.
+   - Input validation handled by <asp:RequiredFieldValidator> and 
+     <asp:RegularExpressionValidator> (email format check).
+   - Code-behind uses ADO.NET SqlCommand with SqlParameter objects to safely 
+     insert records into the Complaints table in SQL Server without SQL injection.
+   - Automatically calls XmlLogger.LogAction() to log the event in ActivityLog.xml.
+
+4. Public Complaints List (ViewComplaints.aspx)
+   - Displays a public transparent grid of all submitted complaints.
+   - Formats status values using visual color-coded badges (Pending: Yellow, 
+     In Progress: Blue, Resolved: Green).
+
+5. Admin Login (AdminLogin.aspx) & Session Authorization
+   - Admin login interface with Username and Password fields.
+   - Validates credentials against the Users table in CanteenDB (default: admin / admin123).
+   - Upon successful login, sets Session["AdminUser"] = username and redirects to 
+     ManageComplaints.aspx.
+   - Protected admin pages (ManageComplaints.aspx, ViewLogs.aspx, EditComplaint.aspx) 
+     check Session["AdminUser"]. If unauthenticated, visitors are redirected to AdminLogin.aspx.
+
+6. Admin Management Console (ManageComplaints.aspx)
+   - Built with ASP.NET AJAX (<asp:ScriptManager> and <asp:UpdatePanel>) for 
+     non-refresh background updates.
+   - Side <asp:TreeView> displays category navigation bound to web.sitemap.
+   - Status Filter DropDownList dynamically filters the <asp:GridView> using 
+     parameterized SQL queries.
+   - Paginated GridView (AllowPaging="True", PageSize="5") displays active 
+     complaints with "Edit" links and inline "Resolve" buttons.
+   - Bottom <asp:DataList> displays horizontal visual cards of resolved complaints.
+
+7. Edit Complaint Status (EditComplaint.aspx)
+   - Allows administrators to adjust complaint categories and update resolution 
+     statuses (Pending, In Progress, Resolved, Rejected).
+   - Updates CanteenDB via parameterized SQL and logs audit events to ActivityLog.xml.
+
+8. Complaint Details Viewer (ComplaintDetails.aspx)
+   - Renders complete complaint specifications inside an <asp:DetailsView> 
+     driven by QueryString parameter (?ID=1).
+
+9. XML Audit Log Viewer (ViewLogs.aspx)
+   - Reads audit trail records directly from App_Data/ActivityLog.xml using 
+     LINQ to XML (XDocument).
+   - Displays log entries (Timestamp, Action, Details) in a paginated GridView.
+
+10. Canteen Info & Hours (About.aspx)
+    - Realistic campus information hub displaying counter operating hours 
+      (Breakfast, Lunch, Evening Snacks), campus block outlets directory, and 
+      helpdesk contact directory.
+
+--------------------------------------------------------------------------------
+4. BACKEND MECHANICS & DATABASE
+--------------------------------------------------------------------------------
+
+- Database Auto-Provisioning (DatabaseInitializer.cs & Global.asax.cs):
+  On application startup, DatabaseInitializer automatically checks if CanteenDB 
+  and its tables (Users and Complaints) exist on SQL Server (.\SQLEXPRESS). 
+  If missing, it creates the database, tables, and populates sample initial data.
+
+- XML Audit Trail Logger (XmlLogger.cs):
+  Thread-safe C# static class using System.Xml.Linq.XDocument to append log entries 
+  (<Timestamp>, <Action>, <Details>) directly into App_Data/ActivityLog.xml.
+
+--------------------------------------------------------------------------------
+5. CREDENTIALS & HOW TO RUN
+--------------------------------------------------------------------------------
+Default Admin Credentials:
+   - Username : admin
+   - Password : admin123
+
+How to Run:
+   1. Open CanteenComplaintSystem.sln in Visual Studio 2022.
+   2. Set Default.aspx as Start Page.
+   3. Press F5 (or launch via IIS Express).
+================================================================================

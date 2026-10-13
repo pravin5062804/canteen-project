@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ActivityLogs>
+  <LogEntry>
+    <Timestamp>2026-09-22 10:00:00</Timestamp>
+    <Action>SystemInitialization</Action>
+    <Details>Canteen Complaint System initialized successfully.</Details>
+  </LogEntry>
+  <LogEntry>
+    <Timestamp>2026-09-22 20:38:49</Timestamp>
+    <Action>SubmitComplaint_AttemptFailed</Action>
+    <Details>Failed to submit complaint for pravinc hdydhkjedb: Cannot open database "CanteenDB" requested by the login. The login failed.
+Login failed for user 'LAPTOP-ODNLURQ0\Admin'.</Details>
+  </LogEntry>
+  <LogEntry>
+    <Timestamp>2026-09-22 20:47:05</Timestamp>
+    <Action>DatabaseInitializer</Action>
+    <Details>Auto-provisioned CanteenDB database and tables successfully.</Details>
+  </LogEntry>
+  <LogEntry>
+    <Timestamp>2026-09-22 20:47:07</Timestamp>
+    <Action>SubmitComplaint</Action>
+    <Details>New complaint #7 submitted by pravinc hdydhkjedb (dwejfwebu@vweesbcke.in) under category 'Food Quality'.</Details>
+  </LogEntry>
+  <LogEntry>
+    <Timestamp>2026-09-22 20:49:33</Timestamp>
+    <Action>SubmitComplaint</Action>
+    <Details>New complaint #8 submitted by Pravin choudhary (pravin@ves.ac.in) under category 'Food Quality'.</Details>
+  </LogEntry>
+  <LogEntry>
+    <Timestamp>2026-09-22 20:49:47</Timestamp>
+    <Action>ViewComplaintDetails</Action>
+    <Details>Viewed detailed record for Complaint #8.</Details>
+  </LogEntry>
+  <LogEntry>
+    <Timestamp>2026-09-22 20:50:10</Timestamp>
+    <Action>ResolveComplaint</Action>
+    <Details>Complaint #7 marked as 'Resolved' by Admin.</Details>
+  </LogEntry>
+  <LogEntry>
+    <Timestamp>2026-09-22 21:55:36</Timestamp>
+    <Action>DatabaseInitializer</Action>
+    <Details>Auto-provisioned CanteenDB database and tables successfully.</Details>
+  </LogEntry>
+  <LogEntry>
+    <Timestamp>2026-09-22 21:55:53</Timestamp>
+    <Action>AdminLoginFailed</Action>
+    <Details>Failed authentication attempt for username 'admin'.</Details>
+  </LogEntry>
+  <LogEntry>
+    <Timestamp>2026-09-22 21:55:58</Timestamp>
+    <Action>AdminLoginSuccess</Action>
+    <Details>Administrator 'admin' authenticated successfully.</Details>
+  </LogEntry>
+  <LogEntry>
+    <Timestamp>2026-09-22 21:56:35</Timestamp>
+    <Action>AdminLogout</Action>
+    <Details>Administrator 'admin' logged out.</Details>
+  </LogEntry>
+  <LogEntry>
+    <Timestamp>2026-09-22 21:58:08</Timestamp>
+    <Action>ViewComplaintDetails</Action>
+    <Details>Viewed detailed record for Complaint #8.</Details>
+  </LogEntry>
+  <LogEntry>
+    <Timestamp>2026-09-22 21:58:30</Timestamp>
+    <Action>AdminLoginSuccess</Action>
+    <Details>Administrator 'admin' authenticated successfully.</Details>
+  </LogEntry>
+  <LogEntry>
+    <Timestamp>2026-09-22 21:59:52</Timestamp>
+    <Action>ResolveComplaint</Action>
+    <Details>Complaint #8 marked as 'Resolved' by Administrator 'admin'.</Details>
+  </LogEntry>
+  <LogEntry>
+    <Timestamp>2026-09-22 22:00:00</Timestamp>
+    <Action>ViewComplaintDetails</Action>
+    <Details>Viewed detailed record for Complaint #8.</Details>
+  </LogEntry>
+  <LogEntry>
+    <Timestamp>2026-09-22 22:05:13</Timestamp>
+    <Action>DatabaseInitializer</Action>
+    <Details>Auto-provisioned CanteenDB database and tables successfully.</Details>
+  </LogEntry>
+  <LogEntry>
+    <Timestamp>2026-09-24 11:27:49</Timestamp>
+    <Action>DatabaseInitializer</Action>
+    <Details>Auto-provisioned CanteenDB database and tables successfully.</Details>
+  </LogEntry>
+  <LogEntry>
+    <Timestamp>2026-09-24 11:28:04</Timestamp>
+    <Action>AdminLoginSuccess</Action>
+    <Details>Administrator 'admin' authenticated successfully.</Details>
+  </LogEntry>
+  <LogEntry>
+    <Timestamp>2026-09-24 11:28:26</Timestamp>
+    <Action>AdminLogout</Action>
+    <Details>Administrator 'admin' logged out.</Details>
+  </LogEntry>
+  <LogEntry>
+    <Timestamp>2026-09-24 11:32:03</Timestamp>
+    <Action>SubmitComplaint</Action>
+    <Details>New complaint #9 submitted by sunny (suny@gmail.com) under category 'Food Quality'.</Details>
+  </LogEntry>
+  <LogEntry>
+    <Timestamp>2026-09-24 11:32:16</Timestamp>
+    <Action>AdminLoginSuccess</Action>
+    <Details>Administrator 'admin' authenticated successfully.</Details>
+  </LogEntry>
+  <LogEntry>
+    <Timestamp>2026-09-24 11:32:26</Timestamp>
+    <Action>ResolveComplaint</Action>
+    <Details>Complaint #9 marked as 'Resolved' by Administrator 'admin'.</Details>
+  </LogEntry>
+  <LogEntry>
+    <Timestamp>2026-09-26 13:46:18</Timestamp>
+    <Action>DatabaseInitializer</Action>
+    <Details>Auto-provisioned CanteenDB database and tables successfully.</Details>
+  </LogEntry>
+</ActivityLogs>

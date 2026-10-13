@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+  <Ad>
+    <ImageUrl>https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&amp;fit=crop&amp;w=800&amp;q=80</ImageUrl>
+    <NavigateUrl>#</NavigateUrl>
+    <AlternateText>Fresh &amp; Healthy Today! 20% Student Discount on Salad Combo</AlternateText>
+    <Impressions>50</Impressions>
+    <Keyword>Offers</Keyword>
+    <Caption>🥗 Daily Special: Fresh Healthy Bowls - 20% Off for Students!</Caption>
+  </Ad>
+  <Ad>
+    <ImageUrl>https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&amp;fit=crop&amp;w=800&amp;q=80</ImageUrl>
+    <NavigateUrl>#</NavigateUrl>
+    <AlternateText>Canteen Hygiene Alert: All counters sanitized hourly!</AlternateText>
+    <Impressions>40</Impressions>
+    <Keyword>Hygiene</Keyword>
+    <Caption>✨ Quality Assurance: All Canteen Counters Sanitized Hourly</Caption>
+  </Ad>
+  <Ad>
+    <ImageUrl>https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&amp;fit=crop&amp;w=800&amp;q=80</ImageUrl>
+    <NavigateUrl>#</NavigateUrl>
+    <AlternateText>Express Lunch Counter open from 12:00 PM to 2:30 PM</AlternateText>
+    <Impressions>30</Impressions>
+    <Keyword>Hours</Keyword>
+    <Caption>⏰ Express Counter Open: Quick Meals Served in Under 5 Minutes!</Caption>
+  </Ad>
+</Advertisements>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="Default.aspx" title="Home" description="Canteen Complaint System Dashboard">
+    <siteMapNode url="SubmitComplaint.aspx" title="Submit Complaint" description="Lodge a new canteen complaint or feedback" />
+    <siteMapNode url="ViewComplaints.aspx" title="View Complaints" description="Browse submitted canteen complaints and status" />
+    <siteMapNode url="About.aspx" title="Canteen Info &amp; Hours" description="Canteen schedule, outlets directory, and helpline contacts" />
+    <siteMapNode url="AdminLogin.aspx" title="Admin Portal" description="Administrator authentication and complaint management console" />
+  </siteMapNode>
+</siteMap>
